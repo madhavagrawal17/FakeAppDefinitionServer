@@ -1,0 +1,100 @@
+{
+    "id": "82a9d9c3-4702-4322-bbc4-6fe7f9b01483",
+    "version": "1.0.0",
+    "name": {
+        "short": "Basic Office Example",
+        "long": "Transform text to uppercase/lowercase."
+    },
+    "description": {
+        "short": "Example MetaOS app that demonstrates various Office features.",
+        "long": "Example MetaOS app that demonstrates various Office features like ribbon, menubar, context menu, keyboard shortcuts, custom functions."
+    },
+    "icons": {
+        "outline": "small_icon.png",
+        "color": "color_icon.png"
+    },
+    "accentColor": "#230201",
+    "publisher": {
+        "name": "Microsoft Corp.",
+        "webSiteUrl": "https://aka.ms/opc_metaos_examples",
+        "privacyUrl": "https://aka.ms/opc_metaos_privacy",
+        "termsOfUseUrl": "https://aka.ms/opc_metaos_examples",
+        "supportUrl": "https://aka.ms/opc_metaos_examples"
+    },
+    "localization": {
+        "defaultLanguage": "en-us",
+        "additionalLanguages": [
+        ]
+    },
+    "extension": {
+        "requirements": {
+            "scopes": [
+                "document",
+                "presentation",
+                "workbook",
+                "mail"
+            ],
+            "capabilities": [
+               { "capability": "AddinCommands", "minVersion": "1.1" }
+            ]
+        },
+        "runtimes": [
+            {
+                "id": "text",
+                "type": "general",
+                "code": {
+                    "page": "https://aka.ms/opc_metaos_examples/alpha/elements/en-us/actions_text.html"
+                },
+                "lifetime": "short",
+                "actions": [
+                    {
+                        "id": "text.showDashboard",
+                        "type": "contextual-launch",
+                        "view": "dashboard"
+                    }
+                ]
+            }
+        ],
+        "ribbons": [
+            {
+                "contexts": [
+                    "default",
+                    "composeMail"
+                ],
+                "tabs": [
+                    {
+                        "id": "dashboard",
+                        "groups": [
+                            {
+                                "id": "dashboard",
+                                "label": "Controls",
+                                "icons": [
+                                    { "size": 16, "file": "test_16.png" },
+                                    { "size": 32, "file": "test_32.png" },
+                                    { "size": 64, "file": "test_64.png" }
+                                ],
+                                "controls": [
+                                    {
+                                        "id": "showTaskpane",
+                                        "type": "button",
+                                        "label": "Show taskpane",
+                                        "icons": [
+                                            { "size": 16, "file": "test_16.png" },
+                                            { "size": 32, "file": "test_32.png" },
+                                            { "size": 64, "file": "test_64.png" }
+                                        ],
+                                        "superTip": {
+                                            "title": "Show taskpane",
+                                            "description": "click to open taskpane"
+                                        },
+                                        "action": "text.show"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
