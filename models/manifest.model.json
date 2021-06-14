@@ -1,0 +1,96 @@
+{
+    "id": {
+      "type": "String"
+    },
+    "version": {
+      "type": "String"
+    },
+    "name": {
+      "short": {
+        "type": "String"
+      },
+      "long": {
+        "type": "String"
+      }
+    },
+    "description": {
+      "short": {
+        "type": "String"
+      },
+      "long": {
+        "type": "String"
+      }
+    },
+    "icons": {
+      "outline": {
+        "type": "String"
+      },
+      "color": {
+        "type": "String"
+      }
+    },
+    "accentColor": {
+      "type": "Date"
+    },
+    "publisher": {
+      "name": {
+        "type": "String"
+      },
+      "webSiteUrl": {
+        "type": "String"
+      },
+      "privacyUrl": {
+        "type": "String"
+      },
+      "termsOfUseUrl": {
+        "type": "String"
+      },
+      "supportUrl": {
+        "type": "String"
+      }
+    },
+    "localization": {
+      "defaultLanguage": {
+        "type": "String"
+      },
+      "additionalLanguages": {
+        "type": [
+          "Mixed"
+        ]
+      }
+    },
+    "extension": {
+      "requirements": {
+        "scopes": {
+          "type": [
+            "String"
+          ]
+        },
+        "capabilities": {
+          "type": [
+            "Mixed"
+          ]
+        }
+      },
+      "runtimes": {
+        "type": [
+          "Mixed"
+        ]
+      },
+      "ribbons": {
+        "type": [
+          "Mixed"
+        ]
+      },
+      "contextMenus": {
+        "type": [
+          "Mixed"
+        ]
+      },
+      "keyboards": {
+        "type": [
+          "Mixed"
+        ]
+      }
+    }
+  }

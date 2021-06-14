@@ -1,0 +1,29 @@
+{
+  "name": "fakeappserver",
+  "version": "1.0.0",
+  "description": "This is REST Api server which return Fake App definition of MetaOS manifest.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madhavagrawal17/FakeAppDefinitionServer.git"
+  },
+  "keywords": [
+    "App",
+    "Definition"
+  ],
+  "author": "maagr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madhavagrawal17/FakeAppDefinitionServer/issues"
+  },
+  "homepage": "https://github.com/madhavagrawal17/FakeAppDefinitionServer#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.13",
+    "mongoose-gen": "^2.1.1"
+  }
+}
