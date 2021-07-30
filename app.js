@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const path = require('path');
 
 const app = express();
 
@@ -9,6 +10,7 @@ app.use(bodyParser.json());
 var fs = require('fs');
 const samplesDir = "./samples/";
 var manifestDict = {};
+var globalApdativeCardJSon;
 
 function init(){
     var files = fs.readdirSync(samplesDir);
@@ -29,30 +31,25 @@ function init(){
     }
 }
 
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '/index.html'));
+  });
+
 app.get('/getentitlement',(req, res, next) => {
-    var manifests = Object.values(manifestDict);
-    console.log(manifests);
-    res.json(manifests);
+    console.log("AdaptiveCard:" + JSON.stringify(globalApdativeCardJSon));
+    res.json(globalApdativeCardJSon);
 });
 
 app.get("/getapp", (req, res, next) => {
-    for(var key in manifestDict) {
-        // do something with "key" and "value" variables
-      }
+    console.log("AdaptiveCard:" + JSON.stringify(globalApdativeCardJSon));
+    res.json(globalApdativeCardJSon);
 });
 
-app.post("/submit", (req, res, next) => {
+app.post('/submit', function(req,res){
     console.log(req.body);
-    try {
-        const manifest = JSON.parse(req.body);
-        if (manifest.id) {
-            manifestDict[manifest.id] = manifest;
-            res.body(manifest.id);
-        }
-    }
-    catch (err) {
-        console.log(`Err: ${err}`);
-    }
+    globalApdativeCardJSon = JSON.parse(req.body.data);
+
+    res.send("Sumitted!");
 });
 
 init();
